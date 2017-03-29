@@ -43,12 +43,9 @@ public class massSort1 {
 
 	static int[] Bubble(int arr[]) {
 		for (int i = 0; i < arr.length; i++) {
-			// Массив просматривается с конца до
-			// позиции i и "легкие элементы всплывают"
+			
 			for (int j = arr.length - 1; j > i; j--) {
-				// Если соседние элементы расположены
-				// в неправильном порядке, то меняем
-				// их местами
+				
 				if (arr[j] < arr[j - 1]) {
 					int temp = arr[j];
 					arr[j] = arr[j - 1];
