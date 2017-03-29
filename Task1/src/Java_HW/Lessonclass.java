@@ -39,24 +39,39 @@ public class Lessonclass {
 //			System.out.print(c+" ");
 //		}
 		
-		for(char a='A';a<='Z';a++)
+//		for(char a='A';a<='Z';a++)
+//		{
+//			System.out.print(a+" ");
+//		}
+//		System.out.println();
+//		for(char a='À';a<='ß';a++)
+//		{
+//			System.out.print(a+" ");
+//		}
+//		System.out.println();
+//		for(char a='ÿ';a>='à';a--)
+//		{
+//			System.out.print(a+" ");
+//		}
+//		System.out.println();
+//		for(char a='0';a<='9';a++)
+//		{
+//			System.out.print(a+" ");
+//		}
+		for (int i=1; i<=7;i++)
 		{
-			System.out.print(a+" ");
+		for(int j=1; j<=7;j++)
+		{
+			if(i==1 || j==1 || i+j==8)
+			{
+			System.out.print("*");
+			}
+			else
+			{
+				System.out.print(" ");
+			}
 		}
 		System.out.println();
-		for(char a='À';a<='ß';a++)
-		{
-			System.out.print(a+" ");
-		}
-		System.out.println();
-		for(char a='ÿ';a>='à';a--)
-		{
-			System.out.print(a+" ");
-		}
-		System.out.println();
-		for(char a='0';a<='9';a++)
-		{
-			System.out.print(a+" ");
 		}
 
 	}
