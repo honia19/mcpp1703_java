@@ -6,8 +6,11 @@ public class mass {
 	public static int[] ChengeHalfArr(int arr[]) {
 
 		int[] res = {};
-		if (arr != null)
+		if (arr==null || arr.length==0)
 		{
+			throw new IllegalArgumentException();
+		}
+		
 			res = new int[arr.length];
 			int midle;
 			if (arr.length % 2 == 0)
@@ -24,27 +27,34 @@ public class mass {
 				res[j] = arr[i];
 				res[i] = arr[j];
 			}
-		}
+		
 		return res;
 
 	}
 
 	public static int[] Reverse(int arr[]) {
 		// Сделать реверс массива (массив в обратном направлении)
-		if (arr == null || arr.length == 0) {
-			return new int[0];
-		}
+	
+			if (arr==null || arr.length==0)
+			{
+				throw new IllegalArgumentException();
+			}
+		
 		int[] resArr = new int[arr.length];
-		int j = 0;
-		for (int i = arr.length - 1; i >= 0; i--) {
-			resArr[j] = arr[i];
-			j++;
+		
+		for (int i = 0;i<arr.length;i++) {
+			resArr[i] = arr[arr.length-1-i];
+			
 		}
 		return resArr;
 	}
 
 	public static int CountUneven(int arr[]) {
-		// Посчитать количество нечетных элементов массива
+		if (arr==null || arr.length==0)
+		{
+			throw new IllegalArgumentException();
+		}
+		
 		int countUnevent = 0;
 
 		for (int i = 0; i < arr.length; i++) {
@@ -60,7 +70,10 @@ public class mass {
 	}
 
 	public static int SumElemUneven(int arr[]) {
-		// Посчитать сумму элементов массива с нечетными индексами
+		if (arr==null || arr.length==0)
+		{
+			throw new IllegalArgumentException();
+		}
 		int index = arr[0];
 		int sumuneven = 0;
 		for (int i = 0; i < arr.length; i++) {
@@ -77,6 +90,10 @@ public class mass {
 	}
 
 	static public int iMaxArray(int arr[]) {
+		if (arr==null || arr.length==0)
+		{
+			throw new IllegalArgumentException();
+		}
 		int imax = 0;
 		int max = arr[imax];
 		for (int i = 0; i < arr.length; i++) {
@@ -89,6 +106,10 @@ public class mass {
 	}
 
 	static public int iMinArray(int arr[]) {
+		if (arr==null || arr.length==0)
+		{
+			throw new IllegalArgumentException();
+		}
 		int imin = 0;
 		int min = arr[imin];
 		for (int i = 0; i < arr.length; i++) {
@@ -101,6 +122,10 @@ public class mass {
 	}
 
 	static public int MaxArray(int arr[]) {
+		if (arr==null || arr.length==0)
+		{
+			throw new IllegalArgumentException();
+		}
 
 		int max = arr[0];
 		for (int i = 0; i < arr.length; i++) {
@@ -111,11 +136,11 @@ public class mass {
 	}
 
 	static public int MinArray(int arr[]) {
-
+		
 		int min = arr[0];
 		if(arr==null || arr.length==0)
 		{
-			throw new IllegalArgumentException();
+			throw new ArrayIndexOutOfBoundsException();
 		}
 		for (int i = 0; i < arr.length; i++) {
 			if (min > arr[i])
@@ -125,6 +150,7 @@ public class mass {
 	}
 
 	public static void main(String[] args) {
+		
 
 		Random rnd = new Random();
 

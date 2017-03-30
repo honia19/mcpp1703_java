@@ -15,14 +15,7 @@ public class massTest {
 		assertArrayEquals(out, res);
 	}
 
-	@Test
-	public void testReversArr_Pusto() {
 
-		int[] in = {};
-		int[] out = {};
-		int[] res = mass.Reverse(in);
-		assertArrayEquals(out, res);
-	}
 
 	@Test
 	public void testReversArr_3() {
@@ -60,13 +53,33 @@ public class massTest {
 		assertArrayEquals(out, res);
 	}
 
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void testReversArr_null() {
 
-		int[] in = null;
-		int[] out = {};
+		
+		int[] res = mass.Reverse(null);
+	
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testReversArr_Pusto() {
+
+		int[] in = {};
 		int[] res = mass.Reverse(in);
-		assertArrayEquals(out, res);
+		
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testCountEven_null() {
+
+		
+		int res = mass.CountUneven(null);
+	
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testCountEven_Pusto() {
+
+		int[] in = {};
+		int res = mass.CountUneven(in);
+		
 	}
 
 	@Test
@@ -77,6 +90,7 @@ public class massTest {
 		int res = mass.CountUneven(in);
 		assertEquals(4, res);
 	}
+	
 
 	@Test
 	public void testCountEven_0() {
@@ -122,6 +136,20 @@ public class massTest {
 		int res = mass.SumElemUneven(in);
 		assertEquals(18, res);
 	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testSumElemUneven_Pusto() {
+
+		int[] in = {};
+		int res = mass.SumElemUneven(in);
+		
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testSumElemUneven_Null() {
+
+		
+		int res = mass.SumElemUneven(null);
+		
+	}
 
 	@Test
 	public void testSumElemUneven_0() {
@@ -139,6 +167,22 @@ public class massTest {
 
 		int res = mass.SumElemUneven(in);
 		assertEquals(4, res);
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testiMaxArray_Pusto() {
+
+		int[] in = {};
+
+		int res = mass.iMaxArray(in);
+		
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testiMaxArray_Null() {
+
+		
+
+		int res = mass.iMaxArray(null);
+		
 	}
 
 	@Test
@@ -181,6 +225,20 @@ public class massTest {
 		int res = mass.iMaxArray(in);
 		assertEquals(0, res);
 	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testiMinArray_Pusto() {
+
+		int[] in = {  };
+		int res = mass.iMinArray(in);
+		
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testiMinArray_Null() {
+
+		
+		int res = mass.iMinArray(null);
+		
+	}
 
 	@Test
 	public void testiMinArray_0() {
@@ -213,6 +271,20 @@ public class massTest {
 		int res = mass.iMinArray(in);
 		assertEquals(4, res);
 	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testMaxArray_Pusto() {
+
+		int[] in = { };
+		int res = mass.MaxArray(in);
+	
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testMaxArray_Null() {
+
+		
+		int res = mass.MaxArray(null);
+	
+	}
 
 	@Test
 	public void testMaxArray_0() {
@@ -244,6 +316,20 @@ public class massTest {
 		int[] in = { -18, -1, -9, -7, -3, -9 };
 		int res = mass.MaxArray(in);
 		assertEquals(-1, res);
+	}
+	@Test(expected=ArrayIndexOutOfBoundsException.class)
+	public void testMinArray_Pusto() {
+
+		int[] in = { };
+		int res = mass.MinArray(in);
+	
+	}
+	@Test(expected=NullPointerException.class)
+	public void testMinArray_Null() {
+
+		
+		int res = mass.MinArray(null);
+	
 	}
 
 	@Test
@@ -284,6 +370,24 @@ public class massTest {
 		int[] in = { -12, -11, -6, -36, -98, -135, -10 };
 		int res = mass.MinArray(in);
 		assertEquals(-135, res);
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testChengeHalfArr_Pusto() {
+
+		int[] in = {  };
+		
+
+		int res[] = mass.ChengeHalfArr(in);
+		
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testChengeHalfArr_null() {
+
+		
+		
+
+		int res[] = mass.ChengeHalfArr(null);
+		
 	}
 
 	@Test

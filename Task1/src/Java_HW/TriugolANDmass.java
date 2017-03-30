@@ -235,13 +235,13 @@ public class TriugolANDmass {
 	}
 
 	public static void main(String[] args) {
-//		Triugol1();
-//		Triugol2();
-//		Triugol3();
-//		Triugol4();
-//		Triugol5();
-//		Triugol6();
-		//Triugol7();
+		Triugol1();
+		Triugol2();
+		Triugol3();
+		Triugol4();
+		Triugol5();
+		Triugol6();
+		Triugol7();
 		Triugol8();
 //mass333();
 //mass111();
