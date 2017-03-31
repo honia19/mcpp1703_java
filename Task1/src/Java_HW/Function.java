@@ -154,7 +154,7 @@ public class Function {
 	}
 
 	public static void main(String[] args) {
-		 System.out.println(getString(978));
+		 System.out.println(getString(935));
 		//System.out.println(getNumber("сто сорок три"));
 
 		// numDay(7);
