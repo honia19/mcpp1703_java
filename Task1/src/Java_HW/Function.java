@@ -9,6 +9,69 @@ public class Function {
 			"восемьсот", "девятьсот" };
 	static String[] arrayOfDecplus = { "", "десять", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят",
 			"семьдесят", "восемьдесят", "девяносто" };
+	
+	static int getNumber(String string)
+	{
+		int count = 0;
+		String[] stringsMass = string.split(" ");
+		for (int i = stringsMass.length - 1, j = 1; i >= 0; i--, j++)
+		{
+			int dig = serchDig(stringsMass[i], j);
+			if (dig == -1)
+			{
+				throw new IllegalArgumentException();
+			}
+			count += dig;
+		}
+		return count;
+	}
+
+	static int serchDig(String string, int position)
+	{
+		int dig = 0;
+		int i = 0;
+		do
+		{
+			if (string.equals(arrayOfOne[i]))
+			{
+				dig = i;
+				return dig;
+			}
+			i++;
+		} while (i < arrayOfOne.length);
+		i = 0;
+		do
+		{
+			if (string.equals(arrayOfDecplus[i]))
+			{
+				dig = i * 10;
+				return dig;
+			}
+			i++;
+		} while (i < arrayOfDecplus.length);
+		i = 0;
+		do
+		{
+			if (string.equals(arrayOfHundred[i]))
+			{
+				dig = i * 100;
+				return dig;
+			}
+			i++;
+		} while (i < arrayOfDecplus.length);
+		i = 0;
+		do
+		{
+			if (string.equals(arrayOfDec[i]))
+			{
+				dig = i + 10;
+				return dig;
+			}
+			i++;
+		} while (i < arrayOfDecplus.length);
+
+		return -1;
+	}
 
 	static String getString(int num) {
 		if (num == 0) {
@@ -92,6 +155,7 @@ public class Function {
 
 	public static void main(String[] args) {
 		// System.out.println(getString(969));
+		//System.out.println(getNumber("сто сорок три"));
 
 		// numDay(7);
 		// System.out.println("Расстояние между точками =
