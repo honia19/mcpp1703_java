@@ -327,8 +327,8 @@ public class massTest {
 	@Test(expected=NullPointerException.class)
 	public void testMinArray_Null() {
 
-		
-		int res = mass.MinArray(null);
+		int[] arr=null;
+		int res = mass.MinArray(arr);
 	
 	}
 
