@@ -12,7 +12,7 @@ public class Function {
 	
 	static int getNumber(String string)
 	{
-		int count = 0;
+		int count1 = 0;
 		String[] stringsMass = string.split(" ");
 		for (int i = stringsMass.length - 1, j = 1; i >= 0; i--, j++)
 		{
@@ -21,9 +21,9 @@ public class Function {
 			{
 				throw new IllegalArgumentException();
 			}
-			count += dig;
+			count1 += dig;
 		}
-		return count;
+		return count1;
 	}
 
 	static int serchDig(String string, int position)
@@ -154,7 +154,7 @@ public class Function {
 	}
 
 	public static void main(String[] args) {
-		// System.out.println(getString(969));
+		 System.out.println(getString(978));
 		//System.out.println(getNumber("сто сорок три"));
 
 		// numDay(7);
