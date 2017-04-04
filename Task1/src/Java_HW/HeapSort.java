@@ -1,3 +1,5 @@
+package Java_HW;
+
 public class HeapSort {
 
 	private static int[] a;
