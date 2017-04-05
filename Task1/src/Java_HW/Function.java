@@ -10,107 +10,29 @@ public class Function {
 	static String[] arrayOfDecplus = { "", "десять", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят",
 			"семьдесят", "восемьдесят", "девяносто" };
 	
-	static int getNumber(String string)
+	static String getString(int num)
 	{
-		int count1 = 0;
-		String[] stringsMass = string.split(" ");
-		for (int i = stringsMass.length - 1, j = 1; i >= 0; i--, j++)
+		String ret="";
+		int sot=num/100;
+		int dec=num%100/10;
+		int odi=num%10;
+		ret=arrayOfHundred[sot];
+		if(dec==1)
 		{
-			int dig = serchDig(stringsMass[i], j);
-			if (dig == -1)
-			{
-				throw new IllegalArgumentException();
-			}
-			count1 += dig;
+			ret+=arrayOfDec[odi];
 		}
-		return count1;
-	}
-
-	static int serchDig(String string, int position)
-	{
-		int dig = 0;
-		int i = 0;
-		do
+		else
 		{
-			if (string.equals(arrayOfOne[i]))
-			{
-				dig = i;
-				return dig;
-			}
-			i++;
-		} while (i < arrayOfOne.length);
-		i = 0;
-		do
-		{
-			if (string.equals(arrayOfDecplus[i]))
-			{
-				dig = i * 10;
-				return dig;
-			}
-			i++;
-		} while (i < arrayOfDecplus.length);
-		i = 0;
-		do
-		{
-			if (string.equals(arrayOfHundred[i]))
-			{
-				dig = i * 100;
-				return dig;
-			}
-			i++;
-		} while (i < arrayOfDecplus.length);
-		i = 0;
-		do
-		{
-			if (string.equals(arrayOfDec[i]))
-			{
-				dig = i + 10;
-				return dig;
-			}
-			i++;
-		} while (i < arrayOfDecplus.length);
-
-		return -1;
-	}
-
-	static String getString(int num) {
-		if (num == 0) {
-			return "Ноль";
+			ret+="" + arrayOfDecplus[dec];
+			ret+="" + arrayOfOne[odi];
 		}
-		int divider = 10; // делитель
-		int remain = 0;
-		String string = "";
-		int temp = num % 10; // для установки *нацать
-		for (int i = 1; i <= 3; i++) {
-
-			remain = num % divider;
-			num /= 10;
-			if (remain != 0) {
-				if (i == 1) {
-					string = arrayOfOne[remain];
-				}
-				if (i == 2) {
-					if (remain == 1) {
-						string = arrayOfDec[temp];
-					} else {
-						if (temp == 0) {
-							string = "";
-						}
-						string = arrayOfDecplus[remain] + " ".concat(string);
-					}
-				}
-				if (i == 3) {
-					string = arrayOfHundred[remain] + " ".concat(string);
-				}
-			}
-			if (string.endsWith(" ")) {
-				string = string.substring(0, string.length() - 1);
-			}
-		}
-
-		return string;
-
+		return ret.trim();
 	}
+	
+	
+
+
+
 
 	static double DecartCoord(int x1, int y1, int x2, int y2) {
 	
@@ -121,41 +43,22 @@ public class Function {
 	}
 
 	static String numDay(int num) {
-		String str = " ";
+		
 		if(num<=0 || num>=8)
 		{
 			throw new IllegalArgumentException();
 		}
-		switch (num) {
-		case 1:
-			str = "Понедельник";
-			break;
-		case 2:
-			str = "Вторник";
-			break;
-		case 3:
-			str = "Среда";
-			break;
-		case 4:
-			str = "Четверг";
-			break;
-		case 5:
-			str = "Пятница";
-			break;
-		case 6:
-			str = "Суббота";
-			break;
-		case 7:
-			str = "Воскресенье";
-			break;
+		
+		String[] str = {"","Понедельник","Вторник","Среда","Четверг","Пятница","Суббота","Воскресенье"};
 
-		}
-		return str;
+
+		
+		return str[num];
 	}
 
 	public static void main(String[] args) {
-		 System.out.println(getString(935));
-		//System.out.println(getNumber("сто сорок три"));
+
+		//System.out.println(getString(17));
 
 		// numDay(7);
 		// System.out.println("Расстояние между точками =

@@ -3,50 +3,53 @@ package Java_HW;
 import java.util.Random;
 
 public class mass {
-	public static int[] ChengeHalfArr(int arr[]) {
+	public static void main(String[] args) {
+		int [] a={4,5,6};
 
-		int[] res = {};
+		Reverse(a);
+
+		// numDay(7);
+		// System.out.println("Расстояние между точками =
+		// "+DecartCoord(0,4,0,2)+"cм");
+
+	}
+	public static void ChengeHalfArr(int arr[]) {
+		
 		if (arr==null || arr.length==0)
 		{
 			throw new IllegalArgumentException();
 		}
 		
-			res = new int[arr.length];
-			int midle;
-			if (arr.length % 2 == 0)
-			{
-				midle = arr.length / 2;
-			} else
-			{
-				midle = arr.length / 2 + 1;
-				res[midle - 1] = arr[midle - 1];
-			}
-			for (int i = 0, j = midle; j < arr.length; i++, j++)
-			{
-
-				res[j] = arr[i];
-				res[i] = arr[j];
-			}
+	int d=(arr.length%2==0) ? 0 : 1;
+	for(int i=0;i<arr.length/2;i++)
+	{
+		int temp=arr[i];
+		arr[i]=arr[arr.length/2+d+i];
+		arr[arr.length/2+d+i]=temp;
+	}
 		
-		return res;
+	
 
 	}
 
-	public static int[] Reverse(int arr[]) {
+	public static void Reverse(int arr[]) 
+	{
 		// Сделать реверс массива (массив в обратном направлении)
 	
 			if (arr==null || arr.length==0)
 			{
 				throw new IllegalArgumentException();
 			}
+
+		for (int i = 0; i<arr.length/2; i++) 
+		{
+			int temp=arr[i];
+			arr[i] = arr[arr.length-1-i];
+			arr[arr.length-1-i]=temp;
 		
-		int[] resArr = new int[arr.length];
-		
-		for (int i = 0;i<arr.length;i++) {
-			resArr[i] = arr[arr.length-1-i];
 			
 		}
-		return resArr;
+		
 	}
 
 	public static int CountUneven(int arr[]) {
@@ -128,8 +131,8 @@ public class mass {
 		}
 
 		int max = arr[0];
-		for (int i = 0; i < arr.length; i++) {
-			if (max < arr[i])
+		for (int i = 1; i < arr.length; i++) {
+			if ( arr[i]>max)
 				max = arr[i];
 		}
 		return max;
@@ -137,34 +140,19 @@ public class mass {
 
 	static public int MinArray(int arr[]) {
 		
-		int min = arr[0];
+		
 		if(arr==null || arr.length==0)
 		{
-			throw new ArrayIndexOutOfBoundsException();
+			throw new IllegalArgumentException();
 		}
-		for (int i = 0; i < arr.length; i++) {
-			if (min > arr[i])
+		int min = arr[0];
+		for (int i = 1; i < arr.length; i++) {
+			if (arr[i]<min)
 				min = arr[i];
 		}
 		return min;
 	}
 
-	public static void main(String[] args) {
-		
 
-		Random rnd = new Random();
-
-		int mass[] = new int[6];
-		for (int i = 0; i < mass.length; i++) {
-			mass[i] = rnd.nextInt(60) - 2;
-			System.out.print((mass[i] + " "));
-
-		}
-		
-		System.out.println();
-//System.out.println(iMaxArray(mass));
-		// ChengeHalfArr(mass);
-
-	}
 
 }

@@ -5,49 +5,49 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class FunctionTest {
-	@Test
-	public void testNumber999() {
-		String string = "девятьсот девяносто девять";
-		int i = Function.getNumber(string);
-		assertEquals(999, i);
-	}
-	@Test
-	public void testNumber83() {
-		String string = "восемьдесят три";
-		int i = Function.getNumber(string);
-		assertEquals(83, i);
-	}
-
-	@Test
-	public void testNumber211() {
-		String string = "двести одинадцать";
-		int i = Function.getNumber(string);
-		assertEquals(211, i);
-	}
-
-	@Test
-	public void testNumber230() {
-		String string = "двести тридцать";
-		int i = Function.getNumber(string);
-		assertEquals(230, i);
-	}
-
-	@Test
-	public void testNumber236() {
-		String string = "двести тридцать шесть";
-		int i = Function.getNumber(string);
-		assertEquals(236, i);
-	}
-
-	@Test(expected = IllegalArgumentException.class)
-	public void testNumber1000() {
-		Function.getNumber("тысяча");
-	}
-
-	@Test(expected = IllegalArgumentException.class)
-	public void testNumber_1() {
-		Function.getNumber("минус один");
-	}
+//	@Test
+//	public void testNumber999() {
+//		String string = "девятьсот девяносто девять";
+//		int i = Function.getNumber(string);
+//		assertEquals(999, i);
+//	}
+//	@Test
+//	public void testNumber83() {
+//		String string = "восемьдесят три";
+//		int i = Function.getNumber(string);
+//		assertEquals(83, i);
+//	}
+//
+//	@Test
+//	public void testNumber211() {
+//		String string = "двести одинадцать";
+//		int i = Function.getNumber(string);
+//		assertEquals(211, i);
+//	}
+//
+//	@Test
+//	public void testNumber230() {
+//		String string = "двести тридцать";
+//		int i = Function.getNumber(string);
+//		assertEquals(230, i);
+//	}
+//
+//	@Test
+//	public void testNumber236() {
+//		String string = "двести тридцать шесть";
+//		int i = Function.getNumber(string);
+//		assertEquals(236, i);
+//	}
+//
+//	@Test(expected = IllegalArgumentException.class)
+//	public void testNumber1000() {
+//		Function.getNumber("тысяча");
+//	}
+//
+//	@Test(expected = IllegalArgumentException.class)
+//	public void testNumber_1() {
+//		Function.getNumber("минус один");
+//	}
 
 	@Test
 	public void test0() {

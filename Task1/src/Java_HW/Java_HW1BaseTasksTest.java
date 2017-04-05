@@ -151,20 +151,18 @@ public class Java_HW1BaseTasksTest {
 		assertEquals(14, z);
 	}
 
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void testMarksExpNeg() {
-		int a = -1;
-		String z;
-		z = Java_HW1BaseTasks.Marks(a);
-		assertEquals(" ", z);
+		
+		Java_HW1BaseTasks.Marks(-1);
+		
 	}
 
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void testMarksLimit100() {
-		int a = 101;
-		String z;
-		z = Java_HW1BaseTasks.Marks(a);
-		assertEquals(" ", z);
+	
+		Java_HW1BaseTasks.Marks(101);
+	
 	}
 
 	@Test

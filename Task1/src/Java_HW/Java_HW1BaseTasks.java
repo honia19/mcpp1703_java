@@ -4,15 +4,6 @@ import java.util.Scanner;
 
 public class Java_HW1BaseTasks {
 
-	public static void main(String[] args) {
-
-		// System.out.println(Marks(101));
-		 //System.out.println("Четверть:"+Coord(1,0));
-		// System.out.println(Sum3x(-101,-100,-88));
-		// System.out.println(MaxFunc(101,100,-100));
-		// System.out.println(Notodd(101,100));
-
-	}
 
 	static int MaxFunc(int num1, int num2, int num3) {
 
@@ -51,7 +42,11 @@ public class Java_HW1BaseTasks {
 	static String Marks(int point) {
 		// Написать программу определения
 		// оценки студента по его рейтингу, на основе следующих правил
-		String str = " ";
+		if(point<0 || point >100)
+		{
+			throw new IllegalArgumentException();
+		}
+		String str = "";
 
 		str = (point >= 0 && point <= 19) ? "F" : str;
 		str = (point >= 20 && point <= 39) ? "E" : str;
@@ -66,20 +61,13 @@ public class Java_HW1BaseTasks {
 
 	static int Coord(int x, int y) {
 		// Определить какой четверти принадлежит точка с координатами (х,у)
-		int coord = 0;
-		if (x > 0 && y > 0) {
-			coord = 1;
-		} else if (x < 0 && y > 0) {
-			coord = 2;
-		} else if (x < 0 && y < 0) {
-			coord = 3;
-		} else if (x > 0 && y < 0) {
-			coord = 4;
-		} else {
+		if(x==0 || y==0)
+		{
 			throw new IllegalArgumentException();
 		}
+	
 
-		return coord;
+		return (x>0 ? (y>0 ? 1:4) : (y>0 ? 2:3));
 	}
 
 }
