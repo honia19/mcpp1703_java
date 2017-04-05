@@ -3,7 +3,8 @@ package Java_HW;
 public class Metering {
 
 	static double Miles(double num) {
-		if (num <= 0) {
+		if (num <= 0) 
+		{
 			throw new IllegalArgumentException();
 		}
 		double res = 0;
@@ -11,7 +12,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Yard(double num) {
+	static double Yard(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -20,7 +22,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Phut(double num) {
+	static double Phut(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -30,7 +33,8 @@ public class Metering {
 	}
 
 	static double Sagen(double num) {
-		if (num <= 0) {
+		if (num <= 0) 
+		{
 			throw new IllegalArgumentException();
 		}
 		double res = 0;
@@ -39,7 +43,8 @@ public class Metering {
 	}
 
 	static double CosoySagen(double num) {
-		if (num <= 0) {
+		if (num <= 0) 
+		{
 			throw new IllegalArgumentException();
 		}
 		double res = 0;
@@ -48,7 +53,8 @@ public class Metering {
 	}
 
 	static double Posoch(double num) {
-		if (num <= 0) {
+		if (num <= 0) 
+		{
 			throw new IllegalArgumentException();
 		}
 		double res = 0;
@@ -56,7 +62,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Arshin(double num) {
+	static double Arshin(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -65,7 +72,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Stoune(double num) {
+	static double Stoune(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -74,7 +82,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Funt(double num) {
+	static double Funt(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -83,7 +92,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Uncia(double num) {
+	static double Uncia(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -92,7 +102,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Pud(double num) {
+	static double Pud(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -101,7 +112,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Berckovec(double num) {
+	static double Berckovec(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -110,7 +122,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Butman(double num) {
+	static double Butman(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -119,7 +132,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Tonna(double num) {
+	static double Tonna(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -128,7 +142,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Kvarta(double num) {
+	static double Kvarta(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -137,7 +152,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Pinta(double num) {
+	static double Pinta(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -146,7 +162,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Galon(double num) {
+	static double Galon(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -155,7 +172,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Barrel(double num) {
+	static double Barrel(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -164,7 +182,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Anker(double num) {
+	static double Anker(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -173,7 +192,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Vedro(double num) {
+	static double Vedro(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -182,7 +202,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Shopen(double num) {
+	static double Shopen(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -191,7 +212,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Secunda(double num) {
+	static double Secunda(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -200,7 +222,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Hour(double num) {
+	static double Hour(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -209,7 +232,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Days(double num) {
+	static double Days(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -218,7 +242,8 @@ public class Metering {
 		return res;
 	}
 
-	static double AcademHour(double num) {
+	static double AcademHour(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -227,7 +252,8 @@ public class Metering {
 		return res;
 	}
 
-	static double AstroHour(double num) {
+	static double AstroHour(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -236,7 +262,8 @@ public class Metering {
 		return res;
 	}
 
-	static double ParaUniverse(double num) {
+	static double ParaUniverse(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -245,7 +272,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Milisec(double num) {
+	static double Milisec(double num) 
+	{
 		if (num <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -254,7 +282,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Farengate(double num) {
+	static double Farengate(double num) 
+	{
 		double res = 0;
 		if (num == 0)
 			res = 32;
@@ -265,7 +294,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Kelvin(double num) {
+	static double Kelvin(double num) 
+	{
 		double res = 0;
 		if (num == 0)
 			res = 273.15;
@@ -276,7 +306,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Rankin(double num) {
+	static double Rankin(double num) 
+	{
 		double res = 0;
 		if (num == 0)
 			res = 491.67;
@@ -287,7 +318,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Demel(double num) {
+	static double Demel(double num) 
+	{
 		double res = 0;
 		if (num == 0)
 			res = 150;
@@ -298,7 +330,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Reomur(double num) {
+	static double Reomur(double num) 
+	{
 		double res = 0;
 		if (num == 0) {
 			return res;
@@ -309,7 +342,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Newton(double num) {
+	static double Newton(double num) 
+	{
 		double res = 0;
 		if (num == 0) {
 			return res;
@@ -320,7 +354,8 @@ public class Metering {
 		return res;
 	}
 
-	static double Remeru(double num) {
+	static double Remeru(double num) 
+	{
 		double res=0;
 		if (num == 0) {
 
@@ -330,12 +365,6 @@ public class Metering {
 		}
 
 		return res;
-	}
-
-	public static void main(String[] args) {
-
-		
-
 	}
 
 }
