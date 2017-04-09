@@ -115,7 +115,7 @@ public class ConvertUpdate {
 			return res;
 		}
 
-		static double Berckovec(double num) 
+		static double Berck(double num) 
 		{
 			if (num <= 0) {
 				throw new IllegalArgumentException();
@@ -141,7 +141,7 @@ public class ConvertUpdate {
 				throw new IllegalArgumentException();
 			}
 			double res = 0;
-			res = (1 / 1000) * num;
+			res = (1 / 1000.0) * num;
 			return res;
 		}
 
@@ -221,7 +221,7 @@ public class ConvertUpdate {
 				throw new IllegalArgumentException();
 			}
 			double res = 0;
-			res = num * 60;
+			res = num * 60.0;
 			return res;
 		}
 
@@ -241,7 +241,7 @@ public class ConvertUpdate {
 				throw new IllegalArgumentException();
 			}
 			double res = 0;
-			res = (0.00069) * num;
+			res = (1/1440.0) * num;
 			return res;
 		}
 
@@ -287,24 +287,40 @@ public class ConvertUpdate {
 
 		static double Farengate(double num) 
 		{
-			double res = 0;
-			if (num == 0)
-				res = 32;
-			else {
-				res = (num * 1.8) + 32;
-			}
+			double res ;
+			
+				res = (num * 1.8) + 32.0;
+			
 
 			return res;
 		}
+		static double FarengateObratka(double num) 
+		{
+			double tmp=0;
+			
+		double res=(num - 32.0);
+		tmp =  (5.0 / 9.0)*res ;
+			
+
+			return tmp;
+		}
+		
 
 		static double Kelvin(double num) 
 		{
 			double res = 0;
-			if (num == 0)
-				res = 273.15;
-			else {
+			
 				res = num + 273.15;
-			}
+			
+
+			return res;
+		}
+		static double KelvinObratka(double num) 
+		{
+			double res = 0;
+			
+				res = num - 273.15;
+			
 
 			return res;
 		}
@@ -312,11 +328,18 @@ public class ConvertUpdate {
 		static double Rankin(double num) 
 		{
 			double res = 0;
-			if (num == 0)
-				res = 491.67;
-			else {
+			
 				res = (num * 1.8) + 491.67;
-			}
+			
+
+			return res;
+		}
+		static double RankinObratka(double num) 
+		{
+			double res = 0;
+			
+				res =5.0/9.0 * (num - 491.67);
+			
 
 			return res;
 		}
@@ -332,15 +355,32 @@ public class ConvertUpdate {
 
 			return res;
 		}
+		static double DemelObratka(double num) 
+		{
+			double res = 0;
+			
+			
+			res = -2.0/3.0*(-150.0+num);
+
+			return res;
+		}
 
 		static double Reomur(double num) 
 		{
 			double res = 0;
-			if (num == 0) {
-				return res;
-			} else {
+			
+			
 				res = num * 0.8;
-			}
+			
+
+			return res;
+		}
+		static double ReomurObratka(double num) 
+		{
+			double res = 0;
+			
+				res = (num) * 10.0/8.0;
+			
 
 			return res;
 		}
@@ -348,25 +388,179 @@ public class ConvertUpdate {
 		static double Newton(double num) 
 		{
 			double res = 0;
-			if (num == 0) {
-				return res;
-			} else {
+			
 				res = num * 0.33;
-			}
+			
 
 			return res;
 		}
-
-		static double Remeru(double num) 
+		static double NewtonObratka(double num) 
 		{
-			double res=0;
-			if (num == 0) {
+		double res = 0;
 
-				res = 7.5;
-			} else {
-				res = (num * 0.525) + 7.5;
+		res = (num) * 10.0/3.3;
+
+		return res;
+		}
+
+		static double Cels(double num) 
+		{
+			
+			
+
+			return num;
+		}
+		static double VolumeOfTemperature(double num, String in, String out)
+		{
+			if(in==null || out==null)
+			{
+				throw new IllegalArgumentException();
+			}
+			if(in==out)
+			{
+				return num;
+			}
+			double res=0;
+			switch(in)
+			{
+			case "Kelvin": res=KelvinObratka(num);break;
+			case "Farengate": res=FarengateObratka(num);break;
+			case "Rankin": res=RankinObratka(num);break;
+			case "Cels": res=Cels(num);break;
+			case "Demel": res=DemelObratka(num);break;
+			case "Reomur": res=ReomurObratka(num);break;
+			case "Newton": res=NewtonObratka(num);break;
+
+			}
+			
+			double temp=0;
+			switch(out)
+			{
+			
+			case "Kelvin": temp=Kelvin(res);break;
+			case "Farengate": temp=Farengate(res);break;
+			case "Rankin": temp=Rankin(res);break;
+			case "Cels": temp=Cels(res);break;
+			case "Demel": temp=Demel(res);break;
+			case "Reomur": temp=Reomur(res);break;
+			case "Newton": temp=Newton(res);break;
+			
+			}
+			return temp;
+		}
+		
+		static double VolumeOfDistance(double num, String in, String out)
+		{
+			if(in==null || out==null)
+			{
+				throw new IllegalArgumentException();
+			}
+			if(in==out)
+			{
+				return num;
 			}
 
+			double temp=0;
+			switch(in)
+			{
+			case "Miles": temp=1/Miles(1)*num;break;
+			case "Yard": temp=1/Yard(1)*num;break;
+			case "Phut": temp=1/Phut(1)*num;break;
+			case "Sagen": temp=1/Sagen(1)*num;break;
+			case "CosoySagen": temp=1/CosoySagen(1)*num;break;
+			case "Posoch": temp=1/Posoch(1)*num;break;
+			case "Arshin": temp=1/Arshin(1)*num;break;
+
+			}
+			
+			double res=0;
+			switch(out)
+			{
+			case "Miles":res=Miles(temp);break;
+			case "Yard":res=Yard(temp);break;
+			case "Phut":res=Phut(temp);break;
+			case "Sagen":res=Sagen(temp);break;
+			case "CosoySagen":res=CosoySagen(temp);break;
+			case "Posoch":res=Posoch(temp);break;
+			case "Arshin":res=Arshin(temp);break;
+			
+			}
+			return res;
+		}
+		static double VolumeOfTime(double num, String in, String out)
+		{
+			if(in==null || out==null)
+			{
+				throw new IllegalArgumentException();
+			}
+			if(in==out)
+			{
+				return num;
+			}
+
+			double temp=0;
+			switch(in)
+			{
+			case "Secunda": temp=(1/Secunda(1))*num;break;
+			case "Hour": temp=(1/Hour(1))*num;break;
+			case "Days": temp=(1/Days(1))*num;break;
+			case "AcademHour": temp=(1/AcademHour(1))*num;break;
+			case "AstroHour": temp=(1/AstroHour(1))*num;break;
+			case "ParaUniverse": temp=(1/ParaUniverse(1))*num;break;
+			case "Milisec": temp=(1/Milisec(1))*num;break;
+
+			}
+			
+			double res=0;
+			switch(out)
+			{
+			case "Secunda":res=Secunda(temp);break;
+			case "Hour":res=Hour(temp);break;
+			case "Days":res=Days(temp);break;
+			case "AcademHour":res=AcademHour(temp);break;
+			case "AstroHour":res=AstroHour(temp);break;
+			case "ParaUniverse":res=ParaUniverse(temp);break;
+			case "Milisec":res=Milisec(temp);break;
+			
+			}
+			return res;
+		}
+		static double VolumeOfWeight(double num, String in, String out)
+		{
+			if(in==null || out==null)
+			{
+				throw new IllegalArgumentException();
+			}
+			if(in==out)
+			{
+				return num;
+			}
+
+			double temp=0;
+			switch(in)
+			{
+			case "Stoune": temp=1/Stoune(1)*num;break;
+			case "Funt": temp=1/Funt(1)*num;break;
+			case "Uncia": temp=1/Uncia(1)*num;break;
+			case "Pud": temp=1/Pud(1)*num;break;
+			case "Berck": temp=1/Berck(1)*num;break;
+			case "Butman": temp=1/Butman(1)*num;break;
+			case "Tonna": temp=1/Tonna(1)*num;break;
+
+			}
+			
+			double res=0;
+			switch(out)
+			{
+			case "Stoune":res=Stoune(temp);break;
+			case "Funt":res=Funt(temp);break;
+			case "Uncia":res=Uncia(temp);break;
+			case "Pud":res=Pud(temp);break;
+			case "Berck":res=Berck(temp);break;
+			case "Butman":res=Butman(temp);break;
+			case "Tonna":res=Tonna(temp);break;
+			
+			}
 			return res;
 		}
 
@@ -374,24 +568,26 @@ public class ConvertUpdate {
 
 	static double VolumeOfAmount(double num, String in, String out)
 	{
-		if(num<=0 || in==null || out==null || in==out)
+		if(in==null || out==null)
 		{
 			throw new IllegalArgumentException();
 		}
-		
-		
-	
-		
+		if(in==out)
+		{
+			return num;
+		}
+
+
 		double temp=0;
 		switch(in)
 		{
-		case "Galon": temp=1/Galon(num);break;
-		case "Kvarta": temp=1/Kvarta(num);break;
-		case "Pinta": temp=1/Pinta(num);break;
-		case "Barrel": temp=1/Barrel(num);break;
-		case "Anker": temp=1/Anker(num);break;
-		case "Vedro": temp=1/Vedro(num);break;
-		case "Shopen": temp=1/Shopen(num);break;
+		case "Galon": temp=1/Galon(1)*num;break;
+		case "Kvarta": temp=1/Kvarta(1)*num;break;
+		case "Pinta": temp=1/Pinta(1)*num;break;
+		case "Barrel": temp=1/Barrel(1)*num;break;
+		case "Anker": temp=1/Anker(1)*num;break;
+		case "Vedro": temp=1/Vedro(1)*num;break;
+		case "Shopen": temp=1/Shopen(1)*num;break;
 
 		}
 		
@@ -408,16 +604,6 @@ public class ConvertUpdate {
 		
 		}
 		return res;
-	}
-
-	
-	
-	
-	
-
-	public static void main(String[] args) {
-		//System.out.println(VolumeOfAmount(100, "Barrel", "Barrel"));
-
 	}
 
 }
